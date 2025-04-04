@@ -30,7 +30,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [here](https://your-live-site-url.com)
+- Live Site URL: [here](https://extensions-manager-two.vercel.app/)
 
 ## My process
 
