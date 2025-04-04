@@ -1,0 +1,20 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+.menubar-button{
+  @apply mx-2 px-3 py-1 text-neutral-700 bg-neutral-0;
+}
+
+button:hover {
+  @apply text-neutral-0 bg-red-500 cursor-pointer;
+}
+
+button:focus{
+
+}
+
+button:active {
+  @apply bg-red-500;
+}
+
+ 

@@ -1,8 +1,28 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* Neutral Colors */
+  --neutral-900: hsl(227, 75%, 14%);
+  --neutral-800: hsl(226, 25%, 17%);
+  --neutral-700: hsl(225, 23%, 24%);
+  --neutral-600: hsl(226, 11%, 37%);
+  --neutral-300: hsl(0, 0%, 78%);
+  --neutral-200: hsl(217, 61%, 90%);
+  --neutral-100: hsl(0, 0%, 93%);
+  --neutral-0: hsl(200, 60%, 99%);
+
+  /* Red Colors */
+  --red-400: hsl(3, 86%, 64%);
+  --red-500: hsl(3, 71%, 56%);
+  --red-700: hsl(3, 77%, 44%);
+
+  /* Gradient Colors */
+  --light-gradient: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%);
+  --dark-gradient: linear-gradient(180deg, #040918 0%, #091540 100%);
 }
 
 @theme inline {
@@ -10,6 +30,22 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  --color-neutral-900: var(--neutral-900);
+  --color-neutral-800: var(--neutral-800);
+  --color-neutral-700: var(--neutral-700);
+  --color-neutral-600: var(--neutral-600);
+  --color-neutral-300: var(--neutral-300);
+  --color-neutral-200: var(--neutral-200);
+  --color-neutral-100: var(--neutral-100);
+  --color-neutral-0: var(--neutral-0);
+
+  --color-red-400: var(--red-400);
+  --color-red-500: var(--red-500);
+  --color-red-700: var(--red-700);
+
+  --color-gradient-light: var(--light-gradient);
+  --color-gradient-dark: var(--dark-gradient);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,4 +59,23 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.light-bg {
+  background-image: var(--light-gradient);
+}
+
+.dark-bg {
+  background-image: var(--dark-gradient);
+}
+
+/* Menubar */
+.menubar-button {
+  @apply mx-2 px-3 py-1 text-neutral-700 bg-neutral-0 rounded-full dark:bg-neutral-600 dark:text-neutral-100;
+}
+.menubar-button:hover {
+  @apply text-neutral-0 bg-red-500 cursor-pointer;
+}
+.menubar-button:focus {
+  @apply outline-red-500 outline-1 outline-offset-1 border-1 border-neutral-0  ring-red-500 ring-inset;
 }
